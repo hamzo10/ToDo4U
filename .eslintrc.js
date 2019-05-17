@@ -1,6 +1,6 @@
 module.exports = {
     extends: 'ion2s',
-    parserOptions :{
+    parserOptions: {
         ecmaVersion: 2018,
-    }
-}
+    },
+};
