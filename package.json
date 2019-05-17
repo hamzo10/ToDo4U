@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/hamzo10/ToDo4U/issues"
   },
-  "homepage": "https://github.com/hamzo10/ToDo4U#readme"
+  "homepage": "https://github.com/hamzo10/ToDo4U#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-ion2s": "^1.0.5"
+  }
 }
