@@ -2,9 +2,9 @@
   "name": "todo4u",
   "version": "0.0.0",
   "description": "A professional lightweight and SIMPLE ToDo List",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server/index.js"
   },
   "repository": {
     "type": "git",
