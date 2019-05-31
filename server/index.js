@@ -1,5 +1,8 @@
 const express = require('express');
 const server = express();
+const api = require('./api');
+
+server.use('/api', api);
 
 server.get('/', (req, res) => {
     res.send('Hello');
