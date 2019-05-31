@@ -1,8 +1,7 @@
 const { Router } = require('express');
 const router = Router();
+const toDO = require('./toDo');
 
-router.get('/new', (req, res) => {
-    res.send('new');
-});
+router.get('/new', toDO.new);
 
 module.exports = router;
