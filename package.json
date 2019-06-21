@@ -18,7 +18,8 @@
   "homepage": "https://github.com/hamzo10/ToDo4U#readme",
   "devDependencies": {
     "eslint": "^5.16.0",
-    "eslint-config-ion2s": "^1.0.5"
+    "eslint-config-ion2s": "^1.0.5",
+    "nodemon": "^1.19.1"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
