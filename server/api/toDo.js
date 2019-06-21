@@ -1,7 +1,8 @@
 const api = {};
 
 api.new = (req, res) => {
-    res.send('new');
+    res.send(req.body);
 };
+
 
 module.exports = api;
