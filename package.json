@@ -4,7 +4,8 @@
   "description": "A professional lightweight and SIMPLE ToDo List",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "nodemon": "nodemon --watch server"
   },
   "repository": {
     "type": "git",
