@@ -1,12 +1,13 @@
 const express = require('express');
-const mongodb = require('mongodb');
 const bodyParser = require('body-parser');
+const mongodb = require('mongodb');
 const api = require('./api');
-const server = express();
 const MongoClient = mongodb.MongoClient;
-const url = 'mongodb://localhost:27017';
-const dbName = 'ToDO4U';
-const client = new MongoClient(url);
+// TODO: Add flexible db config
+const DB_URL = 'mongodb://localhost:27017';
+// const DB_NAME = 'ToDo4U';
+const server = express();
+const client = new MongoClient(DB_URL);
 
 server.use(bodyParser.json());
 
@@ -15,13 +16,13 @@ server.use('/api', api);
 server.get('/', (req, res) => {
     res.send('Hello');
 });
-
-client.connect((error) => {
-    if(error) {
-        console.error(error);
+// TODO: Add try-catch-block
+client.connect((err) => {
+    if (err) {
+        console.error(err);
     }
 });
-
+// TODO: Only start server if connection to db was successful
 server.listen(3000, () => {
     console.log('Server started on port 3000');
 });
