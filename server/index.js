@@ -2,8 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('mongodb');
 const api = require('./api');
-const MongoClient = mongodb.MongoClient;
 const databaseConfig = require('../config');
+// TODO: Destructuring verwenden
+const MongoClient = mongodb.MongoClient;
 const DB_URL = `mongodb://${databaseConfig.host}:${databaseConfig.port}`;
 const server = express();
 const client = new MongoClient(DB_URL, { useNewUrlParser: true });
@@ -19,8 +20,7 @@ server.get('/', (req, res) => {
 async function connectToDatabase () {
     try {
         await client.connect();
-    }
-    catch (err) {
+    } catch (err) {
         console.error(err);
     }
 }
