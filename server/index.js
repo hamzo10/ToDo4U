@@ -15,12 +15,16 @@ server.use('/api', api);
 server.get('/', (req, res) => {
     res.send('Hello');
 });
-// TODO: Add try-catch-block
-client.connect((err) => {
-    if (err) {
+
+async function connectToDatabase () {
+    try {
+        await client.connect();
+    }
+    catch (err) {
         console.error(err);
     }
-});
+}
+connectToDatabase();
 // TODO: Only start server if connection to db was successful
 server.listen(3000, () => {
     console.log('Server started on port 3000');
