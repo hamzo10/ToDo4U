@@ -3,9 +3,8 @@ const bodyParser = require('body-parser');
 const mongodb = require('mongodb');
 const api = require('./api');
 const MongoClient = mongodb.MongoClient;
-// TODO: Add flexible db config
-const DB_URL = 'mongodb://localhost:27017';
-// const DB_NAME = 'ToDo4U';
+const databaseConfig = require('./config');
+const DB_URL = `mongodb://${databaseConfig.host}:${databaseConfig.port}`;
 const server = express();
 const client = new MongoClient(DB_URL, { useNewUrlParser: true });
 
