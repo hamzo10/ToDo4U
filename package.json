@@ -5,7 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
-    "nodemon": "nodemon --watch server"
+    "start:watch": "nodemon --watch server",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
