@@ -7,7 +7,7 @@ const MongoClient = mongodb.MongoClient;
 const DB_URL = 'mongodb://localhost:27017';
 // const DB_NAME = 'ToDo4U';
 const server = express();
-const client = new MongoClient(DB_URL);
+const client = new MongoClient(DB_URL, { useNewUrlParser: true });
 
 server.use(bodyParser.json());
 
