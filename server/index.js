@@ -1,4 +1,5 @@
 // Dateien im Projekt werden required
+// TODO: 08.08.2019 Datenbank <-(MongoClient)-> Backend <-(API)-> Frontend
 const express = require('express');
 const bodyParser = require('body-parser');
 const { MongoClient } = require('mongodb'); // ES6 Destrucutring
