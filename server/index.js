@@ -1,13 +1,13 @@
+// Dateien im Projekt werden required
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongodb = require('mongodb');
+const { MongoClient } = require('mongodb'); // ES6 Destrucutring
 const api = require('./api');
 const databaseConfig = require('../config');
-// TODO: Destructuring verwenden
-const MongoClient = mongodb.MongoClient;
-const DB_URL = `mongodb://${databaseConfig.host}:${databaseConfig.port}`;
+
+const DB_URI = `mongodb://${databaseConfig.host}:${databaseConfig.port}`;
 const server = express();
-const client = new MongoClient(DB_URL, { useNewUrlParser: true });
+const client = new MongoClient(DB_URI, { useNewUrlParser: true });
 
 server.use(bodyParser.json());
 
@@ -20,12 +20,11 @@ server.get('/', (req, res) => {
 async function connectToDatabase () {
     try {
         await client.connect();
+        server.listen(3000, () => {
+            console.log('Server started on port 3000');
+        });
     } catch (err) {
         console.error(err);
     }
 }
 connectToDatabase();
-// TODO: Only start server if connection to db was successful
-server.listen(3000, () => {
-    console.log('Server started on port 3000');
-});
