@@ -1,7 +1,7 @@
-const { MongoClient } = require('mongodb'); // ES6 Destrucutring
-const databaseConfig = require('../config');
+const { MongoClient } = require('mongodb'); // ES6 Destructuring
+const config = require('../config');
 
-const DB_URI = `mongodb://${databaseConfig.host}:${databaseConfig.port}`;
+const DB_URI = `mongodb://${config.database.host}:${config.database.port}`;
 const client = new MongoClient(DB_URI, { useNewUrlParser: true });
 
 async function connect () {

@@ -1,7 +1,8 @@
 const { Router } = require('express');
-const router = Router();
-const toDO = require('./toDo');
+const toDo = require('./toDo');
 
-router.post('/new', toDO.new);
+const router = Router();
+
+router.post('/new', toDo.new);
 
 module.exports = router;

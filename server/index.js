@@ -2,17 +2,17 @@
 // TODO: 08.08.2019 Datenbank <-(MongoClient)-> Backend <-(API)-> Frontend
 const express = require('express');
 const bodyParser = require('body-parser');
-const api = require('./api');
+const config = require('../config');
 const database = require('./database');
+const api = require('./api');
 
 const server = express();
 
 async function start () {
     try {
         await database.connect();
-        server.listen(3000, () => {
-            console.log('Server started on port 3000');
-        });
+        server.listen(config.server.port);
+        console.log('Server started on port', config.server.port);
     } catch (err) {
         console.error(err);
     }
