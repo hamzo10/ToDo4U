@@ -8,6 +8,11 @@ async function connect () {
     await client.connect();
 }
 
+function get () {
+    return client.db(config.database.name);
+}
+
 module.exports = {
     connect,
+    get,
 };
