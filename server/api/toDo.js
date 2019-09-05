@@ -13,7 +13,7 @@ api.all = (req, res) => {
     try {
         const all = collection.find().toArray();
         res.send(all);
-    } catch (err) { 
+    } catch (err) {
         res.send(err);
     }
 };
