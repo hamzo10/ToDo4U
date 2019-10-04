@@ -6,5 +6,8 @@ module.exports = {
         host: 'localhost',
         port: 27017,
         name: 'ToDo4U',
+        collections: {
+            toDos: 'todos',
+        },
     },
 };
