@@ -2,8 +2,16 @@ const database = require('../database');
 
 const api = {};
 
-api.new = (req, res) => {
-    res.send(req.body);
+api.new = async (req, res) => {
+    const db = database.get();
+    const collection = db.collection('todos');
+
+    try {
+        const { insertedId } = await collection.insertOne(req.body);
+        res.send(insertedId);
+    } catch (err) {
+        res.send(err);
+    }
 };
 
 api.all = (req, res) => {
