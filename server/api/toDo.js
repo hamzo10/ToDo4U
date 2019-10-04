@@ -14,12 +14,12 @@ api.new = async (req, res) => {
     }
 };
 
-api.all = (req, res) => {
+api.all = async (req, res) => {
     const db = database.get();
     const collection = db.collection('todos');
 
     try {
-        const all = collection.find().toArray();
+        const all = await collection.find().toArray();
         res.send(all);
     } catch (err) {
         res.send(err);
