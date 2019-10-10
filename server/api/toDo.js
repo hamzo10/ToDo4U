@@ -3,7 +3,7 @@ const { database: { collections } } = require('../../config'); // Destructure
 
 const api = {};
 
-api.new = async (req, res) => {
+api.new = async (req, res, next) => {
     const db = database.get();
     const collection = db.collection(collections.toDos);
 
@@ -11,12 +11,11 @@ api.new = async (req, res) => {
         const { insertedId } = await collection.insertOne(req.body);
         res.send(insertedId);
     } catch (err) {
-        // TODO: error handler
-        res.send(err);
+        next(err);
     }
 };
 
-api.all = async (req, res) => {
+api.all = async (req, res, next) => {
     const db = database.get();
     const collection = db.collection(collections.toDos);
 
@@ -24,8 +23,7 @@ api.all = async (req, res) => {
         const all = await collection.find().toArray();
         res.send(all);
     } catch (err) {
-        // TODO: error handler
-        res.send(err);
+        next(err);
     }
 };
 

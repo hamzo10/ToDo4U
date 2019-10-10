@@ -22,6 +22,11 @@ server.use(bodyParser.json());
 
 server.use('/api', api);
 
+server.use((err, req, res, next) => {
+    res.status(500).send(`Error: ${err.message}`);
+    console.error(`Error: ${err.stack}`);
+});
+
 server.get('/', (req, res) => {
     res.send('Hello');
 });
