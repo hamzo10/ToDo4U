@@ -22,6 +22,7 @@ server.use(bodyParser.json());
 
 server.use('/api', api);
 
+// Errorhandler
 server.use((err, req, res, next) => {
     res.status(500).send(`Error: ${err.message}`);
     console.error(`Error: ${err.stack}`);
