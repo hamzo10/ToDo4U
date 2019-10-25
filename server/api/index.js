@@ -5,8 +5,8 @@ const router = Router();
 
 // TODO: Split api / add info api-endpoint
 
-router.post('/new', toDo.new);
-router.get('/all', toDo.all);
+router.post('/', toDo.new);
+router.get('/', toDo.all);
 router.patch('/:id', toDo.update);
 router.delete('/:id', toDo.delete);
 
