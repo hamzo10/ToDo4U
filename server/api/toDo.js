@@ -59,7 +59,7 @@ api.delete = async (req, res, next) => {
             _id: new ObjectId(id),
         };
 
-        const result = await collection.remove(filter);
+        const result = await collection.deleteOne(filter);
         res.send(result);
     } catch (err) {
         next(err);
