@@ -28,6 +28,7 @@ server.use((err, req, res, next) => {
     console.error(`Error: ${err.stack}`);
 });
 
+// TODO: Update response
 server.get('/', (req, res) => {
     res.send('Hello');
 });
