@@ -12,5 +12,6 @@ router.get('/all', toDo.all);
 router.patch('/update/:id', toDo.update);
 
 // TODO: Add delete todo api-endpoint
+router.delete('/delete/:id', toDo.delete);
 
 module.exports = router;

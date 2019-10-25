@@ -49,4 +49,21 @@ api.update = async (req, res, next) => {
     }
 };
 
+api.delete = async (req, res, next) => {
+    const db = database.get();
+    const collection = db.collection(collections.toDos);
+
+    try {
+        const id = req.params.id;
+        const filter = {
+            _id: new ObjectId(id),
+        };
+
+        const result = await collection.remove(filter);
+        res.send(result);
+    } catch (err) {
+        next(err);
+    }
+};
+
 module.exports = api;
