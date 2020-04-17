@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const config = require('../config');
 const database = require('./database');
 const api = require('./api');
+const { version } = require('../package');
 
 const server = express();
 
@@ -30,7 +31,7 @@ server.use((err, req, res, next) => {
 
 // TODO: Update response
 server.get('/', (req, res) => {
-    res.send('Hello');
+    res.send(`ToDo4U, 1000 Todos in your pocket v${version}`);
 });
 
 start();
