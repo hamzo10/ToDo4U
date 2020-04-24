@@ -2,7 +2,7 @@
 // TODO: 08.08.2019 Datenbank <-(MongoClient)-> Backend <-(API)-> Frontend
 const express = require('express');
 const bodyParser = require('body-parser');
-const config = require('../config');
+const config = require('./config');
 const database = require('./database');
 const api = require('./api');
 const { version } = require('../package');

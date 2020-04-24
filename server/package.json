@@ -2,10 +2,10 @@
   "name": "todo4u",
   "version": "0.0.0",
   "description": "A professional lightweight and SIMPLE ToDo List",
-  "main": "server/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "start:watch": "nodemon --watch server",
+    "start": "node index.js",
+    "start:watch": "nodemon --watch .",
     "lint": "eslint ."
   },
   "repository": {
@@ -20,8 +20,8 @@
   "homepage": "https://github.com/hamzo10/ToDo4U#readme",
   "devDependencies": {
     "eslint": "^6.5.1",
-    "eslint-config-ion2s": "^3.0.1",
-    "husky": "^3.0.8",
+    "eslint-config-ion2s": "^4.1.1",
+    "husky": "^4.2.5",
     "nodemon": "^2.0.3"
   },
   "dependencies": {

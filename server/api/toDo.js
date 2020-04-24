@@ -1,6 +1,6 @@
 const database = require('../database');
 const { ObjectId } = require('mongodb');
-const { database: { collections } } = require('../../config'); // Destructure
+const { database: { collections } } = require('../config'); // Destructure
 
 const api = {};
 
