@@ -3,7 +3,11 @@ module.exports = {
     env: {
         node: true,
     },
-    extends: 'ion2s/vue',
+    extends: [
+        'plugin:vue/essential',
+        '@vue/standard',
+        'ion2s',
+    ],
     parserOptions: {
         ecmaVersion: 2020,
     },
